@@ -26,6 +26,36 @@
         </inputParameters>
     </actionCalls>
     <actionCalls>
+        <name>Invoice_issued</name>
+        <label>Invoice issued</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <actionName>NewEvent</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Notify_AM</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>StartDateTime</name>
+            <value>
+                <elementReference>$System.OriginDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>EndDateTime</name>
+            <value>
+                <elementReference>$Record.CloseDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
         <description>Your account have expanded to new products, reach out to check they have everything they need</description>
         <name>New_products_bought</name>
         <label>New products bought</label>
@@ -50,6 +80,21 @@
             <name>Description</name>
             <value>
                 <elementReference>Handover</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Notify_AM</name>
+        <label>Notify AM</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <actionName>NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$Record.Owner.Account.Owner.AccountId</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -163,16 +208,31 @@
             <name>New_business</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Account.RecordType.CreatedDate</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
-                    <elementReference>$Flow.CurrentDate</elementReference>
+                    <stringValue>New</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Enterprise_value</targetReference>
             </connector>
             <label>New business</label>
+        </rules>
+        <rules>
+            <name>Renewal</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Renewal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Invoice_issued</targetReference>
+            </connector>
+            <label>Renewal</label>
         </rules>
     </decisions>
     <description>If a high-value opportunity is closed and won, create a draft contract.</description>
@@ -255,7 +315,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>InvalidDraft</status>
     <textTemplates>
         <name>Emailsubject</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
