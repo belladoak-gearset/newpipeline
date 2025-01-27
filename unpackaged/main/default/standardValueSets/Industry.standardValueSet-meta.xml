@@ -114,12 +114,17 @@
     <standardValue>
         <fullName>Media</fullName>
         <default>false</default>
-        <label>Media</label>
+        <label>Media &amp; Broadcasting</label>
     </standardValue>
     <standardValue>
         <fullName>Not For Profit</fullName>
         <default>false</default>
         <label>Not For Profit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Platform as a Service</fullName>
+        <default>false</default>
+        <label>Platform as a Service</label>
     </standardValue>
     <standardValue>
         <fullName>Recreation</fullName>
@@ -135,6 +140,11 @@
         <fullName>Shipping</fullName>
         <default>false</default>
         <label>Shipping</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Software as a Service</fullName>
+        <default>false</default>
+        <label>Software as a Service</label>
     </standardValue>
     <standardValue>
         <fullName>Technology</fullName>
