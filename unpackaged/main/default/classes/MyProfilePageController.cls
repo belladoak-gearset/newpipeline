@@ -1,6 +1,6 @@
 /**
  * An apex class that updates portal user details.
-   This apex presents a security risk as currently configured.
+   Guest users are never able to access this page.
  */
 public with sharing class MyProfilePageController {
 
@@ -16,7 +16,10 @@ public with sharing class MyProfilePageController {
                 street, city, country, postalcode, state, localesidkey, mobilephone, extension, fax, contact.email
                 FROM User
                 WHERE id = :UserInfo.getUserId()];
-    
+        // guest users should never be able to access this page
+        if (user.usertype == 'GUEST') {
+            throw new NoAccessException();
+        }
     }
 
     public Boolean getIsEdit() {
