@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bot xmlns="http://soap.sforce.com/2006/04/metadata">
-    <agentType>EinsteinServiceAgent</agentType>
     <botMlDomain>
         <label>Pricing Calculator</label>
         <name>Pricing_Calculator</name>
     </botMlDomain>
     
+    
     <contextVariables>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.MessagingEndUserId</fieldName>
-            <messageType>Custom</messageType>
+            <messageType>Line</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
@@ -25,7 +25,12 @@
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.MessagingEndUserId</fieldName>
-            <messageType>Line</messageType>
+            <messageType>Text</messageType>
+        </contextVariableMappings>
+        <contextVariableMappings>
+            <SObjectType>MessagingSession</SObjectType>
+            <fieldName>MessagingSession.MessagingEndUserId</fieldName>
+            <messageType>Custom</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
@@ -37,22 +42,15 @@
             <fieldName>MessagingSession.MessagingEndUserId</fieldName>
             <messageType>WhatsApp</messageType>
         </contextVariableMappings>
-        <contextVariableMappings>
-            <SObjectType>MessagingSession</SObjectType>
-            <fieldName>MessagingSession.MessagingEndUserId</fieldName>
-            <messageType>Text</messageType>
-        </contextVariableMappings>
         <dataType>Id</dataType>
-        <description>This variable may also be referred to as MessagingEndUser Id</description>
         <developerName>EndUserId</developerName>
-        <includeInPrompt>true</includeInPrompt>
         <label>End User Id</label>
     </contextVariables>
     <contextVariables>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.Id</fieldName>
-            <messageType>Text</messageType>
+            <messageType>WhatsApp</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
@@ -67,7 +65,12 @@
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.Id</fieldName>
-            <messageType>Line</messageType>
+            <messageType>Text</messageType>
+        </contextVariableMappings>
+        <contextVariableMappings>
+            <SObjectType>MessagingSession</SObjectType>
+            <fieldName>MessagingSession.Id</fieldName>
+            <messageType>Custom</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
@@ -77,24 +80,17 @@
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.Id</fieldName>
-            <messageType>WhatsApp</messageType>
-        </contextVariableMappings>
-        <contextVariableMappings>
-            <SObjectType>MessagingSession</SObjectType>
-            <fieldName>MessagingSession.Id</fieldName>
-            <messageType>Custom</messageType>
+            <messageType>Line</messageType>
         </contextVariableMappings>
         <dataType>Id</dataType>
-        <description>This variable may also be referred to as MessagingSession Id</description>
         <developerName>RoutableId</developerName>
-        <includeInPrompt>true</includeInPrompt>
         <label>Routable Id</label>
     </contextVariables>
     <contextVariables>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.EndUserLanguage</fieldName>
-            <messageType>Text</messageType>
+            <messageType>WhatsApp</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
@@ -109,7 +105,12 @@
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.EndUserLanguage</fieldName>
-            <messageType>Line</messageType>
+            <messageType>Text</messageType>
+        </contextVariableMappings>
+        <contextVariableMappings>
+            <SObjectType>MessagingSession</SObjectType>
+            <fieldName>MessagingSession.EndUserLanguage</fieldName>
+            <messageType>Custom</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
@@ -119,24 +120,17 @@
         <contextVariableMappings>
             <SObjectType>MessagingSession</SObjectType>
             <fieldName>MessagingSession.EndUserLanguage</fieldName>
-            <messageType>WhatsApp</messageType>
-        </contextVariableMappings>
-        <contextVariableMappings>
-            <SObjectType>MessagingSession</SObjectType>
-            <fieldName>MessagingSession.EndUserLanguage</fieldName>
-            <messageType>Custom</messageType>
+            <messageType>Line</messageType>
         </contextVariableMappings>
         <dataType>Text</dataType>
-        <description>This variable may also be referred to as MessagingSession EndUserLanguage</description>
         <developerName>EndUserLanguage</developerName>
-        <includeInPrompt>false</includeInPrompt>
         <label>End User Language</label>
     </contextVariables>
     <contextVariables>
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
             <fieldName>MessagingEndUser.ContactId</fieldName>
-            <messageType>Text</messageType>
+            <messageType>WhatsApp</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
@@ -151,7 +145,12 @@
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
             <fieldName>MessagingEndUser.ContactId</fieldName>
-            <messageType>Line</messageType>
+            <messageType>Text</messageType>
+        </contextVariableMappings>
+        <contextVariableMappings>
+            <SObjectType>MessagingEndUser</SObjectType>
+            <fieldName>MessagingEndUser.ContactId</fieldName>
+            <messageType>Custom</messageType>
         </contextVariableMappings>
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
@@ -161,23 +160,14 @@
         <contextVariableMappings>
             <SObjectType>MessagingEndUser</SObjectType>
             <fieldName>MessagingEndUser.ContactId</fieldName>
-            <messageType>WhatsApp</messageType>
-        </contextVariableMappings>
-        <contextVariableMappings>
-            <SObjectType>MessagingEndUser</SObjectType>
-            <fieldName>MessagingEndUser.ContactId</fieldName>
-            <messageType>Custom</messageType>
+            <messageType>Line</messageType>
         </contextVariableMappings>
         <dataType>Id</dataType>
-        <description>This variable may also be referred to as MessagingEndUser ContactId</description>
         <developerName>ContactId</developerName>
-        <includeInPrompt>false</includeInPrompt>
         <label>Contact Id</label>
     </contextVariables>
     <description>Deliver personalized customer interactions with an autonomous AI agent. Agentforce Service Agent intelligently supports your customers with common inquiries and escalates complex issues.</description>
     <label>Pricing Calculator</label>
     <logPrivateConversationData>false</logPrivateConversationData>
     <richContentEnabled>true</richContentEnabled>
-    <sessionTimeout>0</sessionTimeout>
-    <type>ExternalCopilot</type>
 </Bot>
