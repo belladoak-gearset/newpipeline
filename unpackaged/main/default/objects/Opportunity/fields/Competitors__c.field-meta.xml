@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitors__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitors</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Copado</fullName>
+                <default>false</default>
+                <label>Copado</label>
+            </value>
+            <value>
+                <fullName>Ownbackup</fullName>
+                <default>false</default>
+                <label>Ownbackup</label>
+            </value>
+            <value>
+                <fullName>Change Sets</fullName>
+                <default>false</default>
+                <label>Change Sets</label>
+            </value>
+            <value>
+                <fullName>DevOps Centre</fullName>
+                <default>false</default>
+                <label>DevOps Centre</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
