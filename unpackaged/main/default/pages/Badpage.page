@@ -1,0 +1,18 @@
+<!-- 
+File: WorstPracticesPage.page
+
+**Violations**:
+ - Fails to disable autocomplete on a password field
+ - Bound to an Apex controller with many security flaws
+-->
+<apex:page controller="WorstPracticesWithNewFlaws">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:inputText value="{!username}" label="Username" />
+                <!-- Autocomplete is NOT disabled on this password field (worst practice) -->
+                <apex:inputSecret value="{!password}" label="Password" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
